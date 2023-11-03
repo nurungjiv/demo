@@ -1,23 +1,10 @@
-<!DOCTYPE HTML>
-<!--
-	Photon by HTML5 UP
-	html5up.net | @ajlkn
-	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
--->
+<!DOCTYPE html>
 <html>
-	<head>
-		<title>demo</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-
-
-			<script>
-				let intervalId;
-				let startIndex = 0;
-				let stopIndex = 0;
+<head>
+	<script>
+		let intervalId;
+		let startIndex = 0;
+		let stopIndex = 0;
 				const urls = [
 				'https://tossbank.com/_ul/vA4MSA8',
 'https://tossbank.com/_ul/VHUR7Je',
@@ -522,7 +509,7 @@
 
 					// 다른 URL을 추가할 수 있습니다.
 				];
-		
+
 				function openNextLink() {
 					if (startIndex <= stopIndex) {
 						const currentURL = urls[startIndex];
@@ -531,7 +518,7 @@
 						startIndex++;
 					} else {
 						clearInterval(intervalId);
-						document.getElementById('linkInfo').innerHTML = '모든 링크를 열었습니다.';
+						document.getElementById('linkInfo').innerHTML = `링크 열기를 중지했습니다. 중지된 인덱스: ${stopIndex}`;
 					}
 				}
 
@@ -540,26 +527,26 @@
 					stopIndex = parseInt(document.getElementById('stopLinkIndex').value, 10);
 
 					if (!isNaN(startIndex) && startIndex >= 0 && startIndex < urls.length &&
-						!isNaN(stopIndex) && stopIndex >= 0 && stopIndex < urls.length && startIndex <= stopIndex) {
+							!isNaN(stopIndex) && stopIndex >= 0 && stopIndex < urls.length && startIndex <= stopIndex) {
 						intervalId = setInterval(openNextLink, delay);
 					} else {
 						document.getElementById('linkInfo').innerHTML = '올바른 시작 링크 인덱스와 멈추기 링크 인덱스를 입력하세요.';
 					}
 				}
-				
+
 				function stopOpeningLinks() {
 					clearInterval(intervalId);
-					document.getElementById('linkInfo').innerHTML = '링크 열기를 중지했습니다.';
+					document.getElementById('linkInfo').innerHTML = `링크 열기를 중지했습니다. 중지된 인덱스: ${stopIndex}`;
 				}
 			</script>
-		</head>
-		<body>
-			<label for="startLinkIndex">시작 링크 인덱스:</label>
-			<input type="number" id="startLinkIndex" min="0" max="14" value="0"><br>
-			<label for="stopLinkIndex">멈추기 링크 인덱스:</label>
-			<input type="number" id="stopLinkIndex" min="0" max="14" value="14"><br>
-			<button onclick="startOpeningLinks(8200)">시작 (8.2초 딜레이)</button>
-			<button onclick="stopOpeningLinks()"> 멈추기</button>
-			<p id="linkInfo"></p>
-		</body>
+	</head>
+	<body>
+	<label for="startLinkIndex">시작 링크 인덱스:</label>
+	<input type="number" id="startLinkIndex" min="0" max="14" value="0"><br><br>
+	<label for="stopLinkIndex">멈추기 링크 인덱스:</label>
+	<input type="number" id="stopLinkIndex" min="0" max="14" value="14"><br><br>
+	<button onclick="startOpeningLinks(8200)">열기 (8.2초 딜레이)</button>
+	<button onclick="stopOpeningLinks()"> 멈추기</button>
+	<p id="linkInfo"></p>
+	</body>
 </html>
