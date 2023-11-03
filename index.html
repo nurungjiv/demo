@@ -6,462 +6,559 @@
 -->
 <html>
 	<head>
-		<title>Photon by HTML5 UP</title>
+		<title>demo</title>
 		<meta charset="utf-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
 		<link rel="stylesheet" href="assets/css/main.css" />
 		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
 	</head>
-	<body class="is-preload">
+	<body>
 
-		<!-- Header -->
-			<section id="header">
-				<div class="inner">
-					<span class="icon solid major fa-cloud"></span>
-					<h1>Hi, I'm <strong>Photon</strong>, another fine<br />
-					little freebie from <a href="http://html5up.net">HTML5 UP</a>.</h1>
-					<p>Accumsan feugiat mi commodo erat lorem ipsum, sed magna<br />
-					lobortis feugiat sapien sed etiam volutpat accumsan.</p>
-					<ul class="actions special">
-						<li><a href="#one" class="button scrolly">Discover</a></li>
-					</ul>
-				</div>
-			</section>
+			<script>
+				let intervalId;
+				let startIndex = 0;
+				let stopIndex = 0;
+				const urls = [
+				'https//tossbank.com/_ul/vA4MSA8',
+'https//tossbank.com/_ul/VHUR7Je',
+'https//tossbank.com/_ul/N2cqkw9',
+'https//tossbank.com/_ul/13Kblu7',
+'https//tossbank.com/_ul/1bKAQRn',
+'https//tossbank.com/_ul/1cMkJrf',
+'https//tossbank.com/_ul/1g9Oeqw',
+'https//tossbank.com/_ul/1GrguYe',
+'https//tossbank.com/_ul/1n8bMEe',
+'https//tossbank.com/_ul/1oSaz7v',
+'https//tossbank.com/_ul/1XSU2Qn',
+'https//tossbank.com/_ul/3524Yvs',
+'https//tossbank.com/_ul/3qPblZm',
+'https//tossbank.com/_ul/3tz9dgx',
+'https//tossbank.com/_ul/3Z1PgAj',
+'https//tossbank.com/_ul/50KrA25',
+'https//tossbank.com/_ul/5BjokV4',
+'https//tossbank.com/_ul/5FHcw9t',
+'https//tossbank.com/_ul/5jGA4df',
+'https//tossbank.com/_ul/5mOIlM6',
+'https//tossbank.com/_ul/5Rn5IiB',
+'https//tossbank.com/_ul/7AQKNNh',
+'https//tossbank.com/_ul/7JO7syb',
+'https//tossbank.com/_ul/7q1OhQb',
+'https//tossbank.com/_ul/95dnop9',
+'https//tossbank.com/_ul/99Ozldd',
+'https//tossbank.com/_ul/9aHCwS3',
+'https//tossbank.com/_ul/9HnBJa5',
+'https//tossbank.com/_ul/9kOWtC5',
+'https//tossbank.com/_ul/B1Vo5Z7',
+'https//tossbank.com/_ul/BAEVFU4',
+'https//tossbank.com/_ul/BaVRTha',
+'https//tossbank.com/_ul/BboxrB',
+'https//tossbank.com/_ul/bCqOEos',
+'https//tossbank.com/_ul/bDbKvHa',
+'https//tossbank.com/_ul/bFyXVEw',
+'https//tossbank.com/_ul/bim6cQ3',
+'https//tossbank.com/_ul/bK57Aly',
+'https//tossbank.com/_ul/Bk7YPk1',
+'https//tossbank.com/_ul/bNyUBxg',
+'https//tossbank.com/_ul/bPg5nxB',
+'https//tossbank.com/_ul/BqMuPha',
+'https//tossbank.com/_ul/bsNuo6s',
+'https//tossbank.com/_ul/BTCHEjw',
+'https//tossbank.com/_ul/bu7n82r',
+'https//tossbank.com/_ul/buCuWp',
+'https//tossbank.com/_ul/bVVFDmh',
+'https//tossbank.com/_ul/Bx9YHce',
+'https//tossbank.com/_ul/BXtJf3f',
+'https//tossbank.com/_ul/bYzI8Ye',
+'https//tossbank.com/_ul/BzBOa6m',
+'https//tossbank.com/_ul/BzUbbF9',
+'https//tossbank.com/_ul/D7PqUg3',
+'https//tossbank.com/_ul/DBSkLfB',
+'https//tossbank.com/_ul/DdC6uw6',
+'https//tossbank.com/_ul/DDQSRPp',
+'https//tossbank.com/_ul/dFBRRjr',
+'https//tossbank.com/_ul/DfPqLKl',
+'https//tossbank.com/_ul/dgs6Ukf',
+'https//tossbank.com/_ul/dHcDtno',
+'https//tossbank.com/_ul/dhwPttw',
+'https//tossbank.com/_ul/dlHLDuA',
+'https//tossbank.com/_ul/Dn4eVZA',
+'https//tossbank.com/_ul/dN7dcAv',
+'https//tossbank.com/_ul/doYVSXc',
+'https//tossbank.com/_ul/dqKNkNi',
+'https//tossbank.com/_ul/DSfKTb6',
+'https//tossbank.com/_ul/dvuItku',
+'https//tossbank.com/_ul/f293VAw',
+'https//tossbank.com/_ul/F2Gtcc6',
+'https//tossbank.com/_ul/F4RSWLj',
+'https//tossbank.com/_ul/f8mYkyr',
+'https//tossbank.com/_ul/fA2wzG8',
+'https//tossbank.com/_ul/FCbbzz5',
+'https//tossbank.com/_ul/FgZQBJe',
+'https//tossbank.com/_ul/fhg2ykk',
+'https//tossbank.com/_ul/fhjq53i',
+'https//tossbank.com/_ul/Fklp7sh',
+'https//tossbank.com/_ul/FpAwWzb',
+'https//tossbank.com/_ul/FrrKUrr',
+'https//tossbank.com/_ul/fRTVgje',
+'https//tossbank.com/_ul/ft2TaSj',
+'https//tossbank.com/_ul/FTrQw6A',
+'https//tossbank.com/_ul/fTYfUrg',
+'https//tossbank.com/_ul/fxDriA',
+'https//tossbank.com/_ul/Fymkue3',
+'https//tossbank.com/_ul/h0dmJIl',
+'https//tossbank.com/_ul/h2YB5K',
+'https//tossbank.com/_ul/hBuvnL4',
+'https//tossbank.com/_ul/Hd1aYH3',
+'https//tossbank.com/_ul/hejbCPj',
+'https//tossbank.com/_ul/hgmvgK2',
+'https//tossbank.com/_ul/hHBwqm8',
+'https//tossbank.com/_ul/HijItSw',
+'https//tossbank.com/_ul/hIuAatk',
+'https//tossbank.com/_ul/hma2TM7',
+'https//tossbank.com/_ul/HSHqgAd',
+'https//tossbank.com/_ul/HvFha95',
+'https//tossbank.com/_ul/HW44ptu',
+'https//tossbank.com/_ul/HWGPWQ4',
+'https//tossbank.com/_ul/HWp966d',
+'https//tossbank.com/_ul/hXfjjqz',
+'https//tossbank.com/_ul/hXyisi6',
+'https//tossbank.com/_ul/j5tpRVd',
+'https//tossbank.com/_ul/J7fACO3',
+'https//tossbank.com/_ul/J8yxDl5',
+'https//tossbank.com/_ul/JAO6551',
+'https//tossbank.com/_ul/JbuR2GA',
+'https//tossbank.com/_ul/jCWn9V4',
+'https//tossbank.com/_ul/jEHoRxr',
+'https//tossbank.com/_ul/Jf2Gup5',
+'https//tossbank.com/_ul/JFC3izy',
+'https//tossbank.com/_ul/jG4hbw8',
+'https//tossbank.com/_ul/JgOI2wB',
+'https//tossbank.com/_ul/JINWnvs',
+'https//tossbank.com/_ul/jMqjawo',
+'https//tossbank.com/_ul/Jo3vMZc',
+'https//tossbank.com/_ul/jRx71Go',
+'https//tossbank.com/_ul/ju5INKv',
+'https//tossbank.com/_ul/jvsis33',
+'https//tossbank.com/_ul/jw7tPdo',
+'https//tossbank.com/_ul/JZFlVN9',
+'https//tossbank.com/_ul/l3bysav',
+'https//tossbank.com/_ul/LCEi0Al',
+'https//tossbank.com/_ul/ld0jYF1',
+'https//tossbank.com/_ul/lD8wN7t',
+'https//tossbank.com/_ul/ldiMlJw',
+'https//tossbank.com/_ul/lFRU9za',
+'https//tossbank.com/_ul/lFUG3rq',
+'https//tossbank.com/_ul/lMMHske',
+'https//tossbank.com/_ul/lowBtNc',
+'https//tossbank.com/_ul/LpeAc0d',
+'https//tossbank.com/_ul/lqE9s07',
+'https//tossbank.com/_ul/LQIJqh5',
+'https//tossbank.com/_ul/LQQxFmb',
+'https//tossbank.com/_ul/LQwUjz3',
+'https//tossbank.com/_ul/LRIoleq',
+'https//tossbank.com/_ul/LSkqP17',
+'https//tossbank.com/_ul/LSwcDvw',
+'https//tossbank.com/_ul/lVjrJb6',
+'https//tossbank.com/_ul/n7n2nXw',
+'https//tossbank.com/_ul/Nbci48h',
+'https//tossbank.com/_ul/NBgisF2',
+'https//tossbank.com/_ul/NdCuhw7',
+'https//tossbank.com/_ul/ndmoBLt',
+'https//tossbank.com/_ul/NEHXtm5',
+'https//tossbank.com/_ul/NiFaNy9',
+'https//tossbank.com/_ul/nJQSGwx',
+'https//tossbank.com/_ul/nnpIqIr',
+'https//tossbank.com/_ul/NPRGrWe',
+'https//tossbank.com/_ul/nRbmi07',
+'https//tossbank.com/_ul/nuwpQw4',
+'https//tossbank.com/_ul/P0PcxLB',
+'https//tossbank.com/_ul/p0wWU71',
+'https//tossbank.com/_ul/p5cb8Z4',
+'https//tossbank.com/_ul/P8fe8Aq',
+'https//tossbank.com/_ul/P9AvwVn',
+'https//tossbank.com/_ul/p9Fbs4a',
+'https//tossbank.com/_ul/pCPqYSn',
+'https//tossbank.com/_ul/pH5Laf6',
+'https//tossbank.com/_ul/PlISxW6',
+'https//tossbank.com/_ul/pmTlFD2',
+'https//tossbank.com/_ul/N2cqkw9',
+'https//tossbank.com/_ul/PP26N9b',
+'https//tossbank.com/_ul/pqMFu0h',
+'https//tossbank.com/_ul/pQTW72h',
+'https//tossbank.com/_ul/pSMUXV8',
+'https//tossbank.com/_ul/PvbWXQ6',
+'https//tossbank.com/_ul/R0uvJ4l',
+'https//tossbank.com/_ul/r3MrWqe',
+'https//tossbank.com/_ul/r6T2Nec',
+'https//tossbank.com/_ul/rblj47v',
+'https//tossbank.com/_ul/rD7B0vn',
+'https//tossbank.com/_ul/rIRongw',
+'https//tossbank.com/_ul/RNpX1os',
+'https//tossbank.com/_ul/RqMrH34',
+'https//tossbank.com/_ul/rqZn4Q5',
+'https//tossbank.com/_ul/rZ2asjo',
+'https//tossbank.com/_ul/t5987zx',
+'https//tossbank.com/_ul/t5OlaNy',
+'https//tossbank.com/_ul/TBMolms',
+'https//tossbank.com/_ul/TCcf6fa',
+'https//tossbank.com/_ul/tFJLQJe',
+'https//tossbank.com/_ul/TfKG41l',
+'https//tossbank.com/_ul/THMTDYi',
+'https//tossbank.com/_ul/TKoWG74',
+'https//tossbank.com/_ul/TM4IrVB',
+'https//tossbank.com/_ul/tmcj4Tc',
+'https//tossbank.com/_ul/tmgotqa',
+'https//tossbank.com/_ul/TmR0MWp',
+'https//tossbank.com/_ul/TrkPNL7',
+'https//tossbank.com/_ul/tSWVhn',
+'https//tossbank.com/_ul/TTNepD6',
+'https//tossbank.com/_ul/TvEDecA',
+'https//tossbank.com/_ul/tvfmtdz',
+'https//tossbank.com/_ul/tY9uyzi',
+'https//tossbank.com/_ul/tYSWIAc',
+'https//tossbank.com/_ul/tZrxa19',
+'https//tossbank.com/_ul/V7FSxa9',
+'https//tossbank.com/_ul/v8ekzbp',
+'https//tossbank.com/_ul/vF5K8Lr',
+'https//tossbank.com/_ul/VIUlmSc',
+'https//tossbank.com/_ul/ViUvicd',
+'https//tossbank.com/_ul/VJieNj4',
+'https//tossbank.com/_ul/vPioNPe',
+'https//tossbank.com/_ul/VpNOLA5',
+'https//tossbank.com/_ul/Vpw4m8s',
+'https//tossbank.com/_ul/vrFOPyc',
+'https//tossbank.com/_ul/vSgJJ7r',
+'https//tossbank.com/_ul/VWMCLh1',
+'https//tossbank.com/_ul/vWzBYbv',
+'https//tossbank.com/_ul/VXFz0qm',
+'https//tossbank.com/_ul/vYhlcKk',
+'https//tossbank.com/_ul/X6uAF1u',
+'https//tossbank.com/_ul/x7cxIvh',
+'https//tossbank.com/_ul/x9F9oJB',
+'https//tossbank.com/_ul/XaH1Jlx',
+'https//tossbank.com/_ul/XdYui5s',
+'https//tossbank.com/_ul/Xggatd5',
+'https//tossbank.com/_ul/xgKTZcd',
+'https//tossbank.com/_ul/XkfmeQk',
+'https//tossbank.com/_ul/xkqfYl9',
+'https//tossbank.com/_ul/xmT6Ga6',
+'https//tossbank.com/_ul/XOIRVi',
+'https//tossbank.com/_ul/xqiG1Np',
+'https//tossbank.com/_ul/xRTpkou',
+'https//tossbank.com/_ul/XSfOtRz',
+'https//tossbank.com/_ul/xT4fye1',
+'https//tossbank.com/_ul/XVO44Ym',
+'https//tossbank.com/_ul/XxEWKyr',
+'https//tossbank.com/_ul/xyxuHe',
+'https//tossbank.com/_ul/xZf01Kg',
+'https//tossbank.com/_ul/XZfDgyd',
+'https//tossbank.com/_ul/Z5XxSm2',
+'https//tossbank.com/_ul/zD2du2p',
+'https//tossbank.com/_ul/ZGOI3Qw',
+'https//tossbank.com/_ul/zieM17',
+'https//tossbank.com/_ul/zk4o536',
+'https//tossbank.com/_ul/zK6ho8n',
+'https//tossbank.com/_ul/Zkh8Hps',
+'https//tossbank.com/_ul/zMp5E5a',
+'https//tossbank.com/_ul/ZMxQFJ3',
+'https//tossbank.com/_ul/Znde0Wy',
+'https//tossbank.com/_ul/ZntOGo8',
+'https//tossbank.com/_ul/ZorZ1T1',
+'https//tossbank.com/_ul/ztfxabw',
+'https//tossbank.com/_ul/Ztu6nv6',
+'https//tossbank.com/_ul/ZUud9Io',
+'https//tossbank.com/_ul/zycQ5Zh',
+'https//tossbank.com/_ul/1atcpa5',
+'https//tossbank.com/_ul/1jDD9Z1',
+'https//tossbank.com/_ul/1rk9iBz',
+'https//tossbank.com/_ul/1sgAT83',
+'https//tossbank.com/_ul/1Sxpytt',
+'https//tossbank.com/_ul/33B8IBz',
+'https//tossbank.com/_ul/39ceKwy',
+'https//tossbank.com/_ul/3BVHoPs',
+'https//tossbank.com/_ul/3IrTUWw',
+'https//tossbank.com/_ul/3quRj8z',
+'https//tossbank.com/_ul/3sARKIr',
+'https//tossbank.com/_ul/3Ztepp2',
+'https//tossbank.com/_ul/58hmBS1',
+'https//tossbank.com/_ul/58uib5C',
+'https//tossbank.com/_ul/5DCNxQo',
+'https//tossbank.com/_ul/5PrnJwc',
+'https//tossbank.com/_ul/5VLXg0m',
+'https//tossbank.com/_ul/5ydKWyd',
+'https//tossbank.com/_ul/7bDAK12',
+'https//tossbank.com/_ul/7vCmqr5',
+'https//tossbank.com/_ul/7z8PP32',
+'https//tossbank.com/_ul/7ZMw1xz',
+'https//tossbank.com/_ul/90kHlP2',
+'https//tossbank.com/_ul/93aq86g',
+'https//tossbank.com/_ul/9JYRMvo',
+'https//tossbank.com/_ul/9XSjUuj',
+'https//tossbank.com/_ul/9YjfApd',
+'https//tossbank.com/_ul/b8ygbFs',
+'https//tossbank.com/_ul/BBaBnL6',
+'https//tossbank.com/_ul/BGCEMvA',
+'https//tossbank.com/_ul/BhjaaR8',
+'https//tossbank.com/_ul/BMQkEpr',
+'https//tossbank.com/_ul/BrwvRt4',
+'https//tossbank.com/_ul/Bu5Da6j',
+'https//tossbank.com/_ul/bVZxmpB',
+'https//tossbank.com/_ul/DLncZdh',
+'https//tossbank.com/_ul/DNeh1O9',
+'https//tossbank.com/_ul/DprRS4g',
+'https//tossbank.com/_ul/dTiY8Ao',
+'https//tossbank.com/_ul/dTmw7lo',
+'https//tossbank.com/_ul/fdRNfuA',
+'https//tossbank.com/_ul/fEFc983',
+'https//tossbank.com/_ul/fHqLCpv',
+'https//tossbank.com/_ul/fTrZHDc',
+'https//tossbank.com/_ul/fw0BNc',
+'https//tossbank.com/_ul/FyspaZz',
+'https//tossbank.com/_ul/fZmyvEz',
+'https//tossbank.com/_ul/FzutHfe',
+'https//tossbank.com/_ul/H2M3ppB',
+'https//tossbank.com/_ul/h5yn0A1',
+'https//tossbank.com/_ul/hB5OPTq',
+'https//tossbank.com/_ul/hc49A7s',
+'https//tossbank.com/_ul/HeKNXTt',
+'https//tossbank.com/_ul/hmf5aul',
+'https//tossbank.com/_ul/Ho7puJl',
+'https//tossbank.com/_ul/HPnrtr7',
+'https//tossbank.com/_ul/HpWGu7l',
+'https//tossbank.com/_ul/hqr5Vnt',
+'https//tossbank.com/_ul/hzXYXnA',
+'https//tossbank.com/_ul/J7TMFE',
+'https//tossbank.com/_ul/j9NJi91',
+'https//tossbank.com/_ul/jadhKcm',
+'https//tossbank.com/_ul/JaWnMys',
+'https//tossbank.com/_ul/JBhz4Pz',
+'https//tossbank.com/_ul/jGXPYC3',
+'https//tossbank.com/_ul/jMfrLs',
+'https//tossbank.com/_ul/JmuK0ga',
+'https//tossbank.com/_ul/jnYCzlv',
+'https//tossbank.com/_ul/JswLVc8',
+'https//tossbank.com/_ul/JVYrKhv',
+'https//tossbank.com/_ul/Jxczzv',
+'https//tossbank.com/_ul/JxNNEAw',
+'https//tossbank.com/_ul/jzky5b7',
+'https//tossbank.com/_ul/l0hUCgA',
+'https//tossbank.com/_ul/l3dAVwl',
+'https//tossbank.com/_ul/LAckW7o',
+'https//tossbank.com/_ul/LAymBYc',
+'https//tossbank.com/_ul/ldfoJD6',
+'https//tossbank.com/_ul/liVMme',
+'https//tossbank.com/_ul/LMtjMo2',
+'https//tossbank.com/_ul/LQcSR0z',
+'https//tossbank.com/_ul/N5ewKe',
+'https//tossbank.com/_ul/neI35A5',
+'https//tossbank.com/_ul/nLa9M2w',
+'https//tossbank.com/_ul/nLhVQJA',
+'https//tossbank.com/_ul/nqyst39',
+'https//tossbank.com/_ul/nWGcG3',
+'https//tossbank.com/_ul/nXpzg4h',
+'https//tossbank.com/_ul/nZkoCuo',
+'https//tossbank.com/_ul/P1eB7iB',
+'https//tossbank.com/_ul/P41UvN1',
+'https//tossbank.com/_ul/pAH6opm',
+'https//tossbank.com/_ul/PDAMRUe',
+'https//tossbank.com/_ul/PeCvmt6',
+'https//tossbank.com/_ul/PFoFNib',
+'https//tossbank.com/_ul/pInmtTf',
+'https//tossbank.com/_ul/pNg0O2B',
+'https//tossbank.com/_ul/puIDbJm',
+'https//tossbank.com/_ul/r5WYcO2',
+'https//tossbank.com/_ul/R6NHIm6',
+'https//tossbank.com/_ul/ram8B5h',
+'https//tossbank.com/_ul/rb4w3Uw',
+'https//tossbank.com/_ul/rBZmkjo',
+'https//tossbank.com/_ul/rdkZLbl',
+'https//tossbank.com/_ul/Rhu9vx6',
+'https//tossbank.com/_ul/rjA07Ig',
+'https//tossbank.com/_ul/rSrLEVB',
+'https//tossbank.com/_ul/t1WtnD1',
+'https//tossbank.com/_ul/TbBhFv9',
+'https//tossbank.com/_ul/TkIs878',
+'https//tossbank.com/_ul/TkSmDfA',
+'https//tossbank.com/_ul/tpIrQ44',
+'https//tossbank.com/_ul/TtDilaz',
+'https//tossbank.com/_ul/v0AwEB6',
+'https//tossbank.com/_ul/V6sbpf7',
+'https//tossbank.com/_ul/V8lBx4C',
+'https//tossbank.com/_ul/vBclVGn',
+'https//tossbank.com/_ul/veaCZtp',
+'https//tossbank.com/_ul/VJeFtQe',
+'https//tossbank.com/_ul/vKifwmd',
+'https//tossbank.com/_ul/vleMgjw',
+'https//tossbank.com/_ul/vLphdjd',
+'https//tossbank.com/_ul/VNEsC7p',
+'https//tossbank.com/_ul/vQ7eF58',
+'https//tossbank.com/_ul/vxELjds',
+'https//tossbank.com/_ul/X8WRWzs',
+'https//tossbank.com/_ul/XeC6j0o',
+'https//tossbank.com/_ul/xeXuQOd',
+'https//tossbank.com/_ul/xgzgxFy',
+'https//tossbank.com/_ul/Xngdpo2',
+'https//tossbank.com/_ul/Xon4vbp',
+'https//tossbank.com/_ul/z2p0r32',
+'https//tossbank.com/_ul/z4G0hsB',
+'https//tossbank.com/_ul/zaexu4q',
+'https//tossbank.com/_ul/Zf6k0X7',
+'https//tossbank.com/_ul/zfaZgXy',
+'https//tossbank.com/_ul/ZmA1wlo',
+'https//tossbank.com/_ul/zMb48Wz',
+'https//tossbank.com/_ul/ZMVnNQ7',
+'https//tossbank.com/_ul/Zpig38i',
+'https//tossbank.com/_ul/17IxZ2a',
+'https//tossbank.com/_ul/1Xd0FNl',
+'https//tossbank.com/_ul/3z7l39j',
+'https//tossbank.com/_ul/5esrLQe',
+'https//tossbank.com/_ul/7u3qCOz',
+'https//tossbank.com/_ul/9aKBOdq',
+'https//tossbank.com/_ul/BwHk0J1',
+'https//tossbank.com/_ul/DBsVato',
+'https//tossbank.com/_ul/duCm9is',
+'https//tossbank.com/_ul/fwZ0tW4',
+'https//tossbank.com/_ul/HBpJdEi',
+'https//tossbank.com/_ul/hIUZNks',
+'https//tossbank.com/_ul/hNct5vA',
+'https//tossbank.com/_ul/HpVQdCz',
+'https//tossbank.com/_ul/Hx9Mmc2',
+'https//tossbank.com/_ul/JqjLpG7',
+'https//tossbank.com/_ul/jT5xJio',
+'https//tossbank.com/_ul/jTPkNBp',
+'https//tossbank.com/_ul/L8qoZS',
+'https//tossbank.com/_ul/lEEnAfd',
+'https//tossbank.com/_ul/lhPojDk',
+'https//tossbank.com/_ul/LMNawJp',
+'https//tossbank.com/_ul/loy2VGj',
+'https//tossbank.com/_ul/lQtb1L4',
+'https//tossbank.com/_ul/LWsKc8',
+'https//tossbank.com/_ul/N421XWA',
+'https//tossbank.com/_ul/NdNBhNq',
+'https//tossbank.com/_ul/nLN3gKt',
+'https//tossbank.com/_ul/nOulYpj',
+'https//tossbank.com/_ul/NrUYrG',
+'https//tossbank.com/_ul/r0ZKA9j',
+'https//tossbank.com/_ul/rjq89j9',
+'https//tossbank.com/_ul/TOt7oh7',
+'https//tossbank.com/_ul/V5Urmt3',
+'https//tossbank.com/_ul/vomGiOr',
+'https//tossbank.com/_ul/X4OVrpy',
+'https//tossbank.com/_ul/x6SSSqt',
+'https//tossbank.com/_ul/xaONpcC',
+'https//tossbank.com/_ul/xkMlFtc',
+'https//tossbank.com/_ul/xwGeCkt',
+'https//tossbank.com/_ul/zOETx2m',
+'https//tossbank.com/_ul/1iGkl1i',
+'https//tossbank.com/_ul/1uFbVK4',
+'https//tossbank.com/_ul/38Gvvbm',
+'https//tossbank.com/_ul/3a7n3L6',
+'https//tossbank.com/_ul/3C8ckmf',
+'https//tossbank.com/_ul/3LmMQa3',
+'https//tossbank.com/_ul/3oIqILo',
+'https//tossbank.com/_ul/3ULloD',
+'https//tossbank.com/_ul/3wWdzfg',
+'https//tossbank.com/_ul/3XHUifp',
+'https//tossbank.com/_ul/50qW1t1',
+'https//tossbank.com/_ul/5O37jci',
+'https//tossbank.com/_ul/5pw8sw9',
+'https//tossbank.com/_ul/5qQ8hmr',
+'https//tossbank.com/_ul/7B2dCYl',
+'https//tossbank.com/_ul/7yT7Kgf',
+'https//tossbank.com/_ul/97SstEA',
+'https//tossbank.com/_ul/9aFkkie',
+'https//tossbank.com/_ul/9OATjKp',
+'https//tossbank.com/_ul/9ti2BT',
+'https//tossbank.com/_ul/9yITUV2',
+'https//tossbank.com/_ul/b54JDag',
+'https//tossbank.com/_ul/b5SzlU1',
+'https//tossbank.com/_ul/b7PcOYv',
+'https//tossbank.com/_ul/bbhm6Cq',
+'https//tossbank.com/_ul/blckqg9',
+'https//tossbank.com/_ul/BnEtEL4',
+'https//tossbank.com/_ul/bp02nup',
+'https//tossbank.com/_ul/BtGKRX6',
+'https//tossbank.com/_ul/Bwne2st',
+'https//tossbank.com/_ul/Bz7dpud',
+'https//tossbank.com/_ul/D66hzAt',
+'https//tossbank.com/_ul/D8OuK4e',
+'https//tossbank.com/_ul/dAyY1ym',
+'https//tossbank.com/_ul/dfPCABu',
+'https//tossbank.com/_ul/dGP0w92',
+'https//tossbank.com/_ul/dIrMYaq',
+'https//tossbank.com/_ul/dM7j5i7',
+'https//tossbank.com/_ul/DPQuNY6',
+'https//tossbank.com/_ul/DV2OLWf',
+'https//tossbank.com/_ul/dW30aJh',
+'https//tossbank.com/_ul/dzKAjfk',
+'https//tossbank.com/_ul/F26BXEo',
+'https//tossbank.com/_ul/fINZiSq',
+'https//tossbank.com/_ul/FKRkvnk',
+'https//tossbank.com/_ul/FPfcYSz',
+'https//tossbank.com/_ul/FVclCM7',
+'https//tossbank.com/_ul/fWMJJd1',
+'https//tossbank.com/_ul/FXvIqU',
+'https//tossbank.com/_ul/H6a27R7',
+'https//tossbank.com/_ul/hcZIwEk',
+'https//tossbank.com/_ul/HLM9f6u',
+'https//tossbank.com/_ul/HlXPuYy',
+'https//tossbank.com/_ul/HNpm7rB',
+'https//tossbank.com/_ul/hnxD35m',
+'https//tossbank.com/_ul/hsHnrt1',
+'https//tossbank.com/_ul/Hu04Knu',
+'https//tossbank.com/_ul/HWCG5nw',
+'https//tossbank.com/_ul/HZyIfu8',
+'https//tossbank.com/_ul/J0VDqt6',
+'https//tossbank.com/_ul/j3QiOhl',
+'https//tossbank.com/_ul/jap1REx',
+'https//tossbank.com/_ul/jBVI4hy',
+'https//tossbank.com/_ul/jcoBhFA',
+'https//tossbank.com/_ul/jF9sQq7',
+'https//tossbank.com/_ul/JfK0FHf',
+'https//tossbank.com/_ul/jghiQLj',
+'https//tossbank.com/_ul/JjVp7dp',
+'https//tossbank.com/_ul/jLoXbck',
+'https//tossbank.com/_ul/JqkKTtx'
 
-		<!-- One -->
-			<section id="one" class="main style1">
-				<div class="container">
-					<div class="row gtr-150">
-						<div class="col-6 col-12-medium">
-							<header class="major">
-								<h2>Lorem ipsum dolor adipiscing<br />
-								amet dolor consequat</h2>
-							</header>
-							<p>Adipiscing a commodo ante nunc accumsan et interdum mi ante adipiscing. A nunc lobortis non nisl amet vis sed volutpat aclacus nascetur ac non. Lorem curae et ante amet sapien sed tempus adipiscing id accumsan.</p>
-						</div>
-						<div class="col-6 col-12-medium imp-medium">
-							<span class="image fit"><img src="images/pic01.jpg" alt="" /></span>
-						</div>
-					</div>
-				</div>
-			</section>
-
-		<!-- Two -->
-			<section id="two" class="main style2">
-				<div class="container">
-					<div class="row gtr-150">
-						<div class="col-6 col-12-medium">
-							<ul class="major-icons">
-								<li><span class="icon solid style1 major fa-code"></span></li>
-								<li><span class="icon solid style2 major fa-bolt"></span></li>
-								<li><span class="icon solid style3 major fa-camera-retro"></span></li>
-								<li><span class="icon solid style4 major fa-cog"></span></li>
-								<li><span class="icon solid style5 major fa-desktop"></span></li>
-								<li><span class="icon solid style6 major fa-calendar"></span></li>
-							</ul>
-						</div>
-						<div class="col-6 col-12-medium">
-							<header class="major">
-								<h2>Lorem ipsum dolor adipiscing<br />
-								amet dolor consequat</h2>
-							</header>
-							<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
-							<p>Blandit faucibus proin. Ac aliquam integer adipiscing enim non praesent vis commodo nunc phasellus cubilia ac risus accumsan. Accumsan blandit. Lobortis phasellus non lobortis dit varius mi varius accumsan lobortis. Blandit ante aliquam lacinia lorem lobortis semper morbi col faucibus vitae integer placerat accumsan orci eu mi odio tempus adipiscing adipiscing adipiscing curae consequat feugiat etiam dolore.</p>
-							<p>Adipiscing a commodo ante nunc accumsan interdum mi ante adipiscing. A nunc lobortis non nisl amet vis volutpat aclacus nascetur ac non. Lorem curae eu ante amet sapien in tempus ac. Adipiscing id accumsan adipiscing ipsum.</p>
-						</div>
-					</div>
-				</div>
-			</section>
-
-		<!-- Three -->
-			<section id="three" class="main style1 special">
-				<div class="container">
-					<header class="major">
-						<h2>Adipiscing amet consequat</h2>
-					</header>
-					<p>Ante nunc accumsan et aclacus nascetur ac ante amet sapien sed.</p>
-					<div class="row gtr-150">
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic02.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions special">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic03.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions special">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-						<div class="col-4 col-12-medium">
-							<span class="image fit"><img src="images/pic04.jpg" alt="" /></span>
-							<h3>Magna feugiat lorem</h3>
-							<p>Adipiscing a commodo ante nunc magna lorem et interdum mi ante nunc lobortis non amet vis sed volutpat et nascetur.</p>
-							<ul class="actions special">
-								<li><a href="#" class="button">More</a></li>
-							</ul>
-						</div>
-					</div>
-				</div>
-			</section>
-
-		<!-- Four -->
-			<section id="four" class="main style2 special">
-				<div class="container">
-					<header class="major">
-						<h2>Ipsum feugiat consequat?</h2>
-					</header>
-					<p>Sed lacus nascetur ac ante amet sapien.</p>
-					<ul class="actions special">
-						<li><a href="#" class="button wide primary">Sign Up</a></li>
-						<li><a href="#" class="button wide">Learn More</a></li>
-					</ul>
-				</div>
-			</section>
-
-		<!-- Five -->
-		<!--
-			<section id="five" class="main style1">
-				<div class="container">
-					<header class="major special">
-						<h2>Elements</h2>
-					</header>
-
-					<section>
-						<h4>Text</h4>
-						<p>This is <b>bold</b> and this is <strong>strong</strong>. This is <i>italic</i> and this is <em>emphasized</em>.
-						This is <sup>superscript</sup> text and this is <sub>subscript</sub> text.
-						This is <u>underlined</u> and this is code: <code>for (;;) { ... }</code>. Finally, <a href="#">this is a link</a>.</p>
-						<hr />
-						<header>
-							<h4>Heading with a Subtitle</h4>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<header>
-							<h5>Heading with a Subtitle</h5>
-							<p>Lorem ipsum dolor sit amet nullam id egestas urna aliquam</p>
-						</header>
-						<p>Nunc lacinia ante nunc ac lobortis. Interdum adipiscing gravida odio porttitor sem non mi integer non faucibus ornare mi ut ante amet placerat aliquet. Volutpat eu sed ante lacinia sapien lorem accumsan varius montes viverra nibh in adipiscing blandit tempus accumsan.</p>
-						<hr />
-						<h2>Heading Level 2</h2>
-						<h3>Heading Level 3</h3>
-						<h4>Heading Level 4</h4>
-						<h5>Heading Level 5</h5>
-						<h6>Heading Level 6</h6>
-						<hr />
-						<h5>Blockquote</h5>
-						<blockquote>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan faucibus. Vestibulum ante ipsum primis in faucibus lorem ipsum dolor sit amet nullam adipiscing eu felis.</blockquote>
-						<h5>Preformatted</h5>
-						<pre><code>i = 0;
-
-while (!deck.isInOrder()) {
-print 'Iteration ' + i;
-deck.shuffle();
-i++;
-}
-
-print 'It took ' + i + ' iterations to sort the deck.';</code></pre>
-					</section>
-
-					<section>
-						<h4>Lists</h4>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<h5>Unordered</h5>
-								<ul>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-								<h5>Alternate</h5>
-								<ul class="alt">
-									<li>Dolor pulvinar etiam.</li>
-									<li>Sagittis adipiscing.</li>
-									<li>Felis enim feugiat.</li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<h5>Ordered</h5>
-								<ol>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis viverra.</li>
-									<li>Felis enim feugiat.</li>
-									<li>Dolor pulvinar etiam.</li>
-									<li>Etiam vel felis lorem.</li>
-									<li>Felis enim et feugiat.</li>
-								</ol>
-								<h5>Icons</h5>
-								<ul class="icons">
-									<li><a href="#" class="icon brands fa-twitter"><span class="label">Twitter</span></a></li>
-									<li><a href="#" class="icon brands fa-facebook-f"><span class="label">Facebook</span></a></li>
-									<li><a href="#" class="icon brands fa-instagram"><span class="label">Instagram</span></a></li>
-									<li><a href="#" class="icon brands fa-github"><span class="label">Github</span></a></li>
-								</ul>
-							</div>
-						</div>
-						<h5>Actions</h5>
-						<div class="row">
-							<div class="col-6 col-12-medium">
-								<ul class="actions">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions small">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary">Default</a></li>
-									<li><a href="#" class="button">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small">Small</a></li>
-									<li><a href="#" class="button small">Small</a></li>
-								</ul>
-							</div>
-							<div class="col-6 col-12-medium">
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary fit">Default</a></li>
-									<li><a href="#" class="button fit">Default</a></li>
-								</ul>
-								<ul class="actions stacked">
-									<li><a href="#" class="button primary small fit">Small</a></li>
-									<li><a href="#" class="button small fit">Small</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
-
-					<section>
-						<h4>Table</h4>
-						<h5>Default</h5>
-						<div class="table-wrapper">
-							<table>
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-
-						<h5>Alternate</h5>
-						<div class="table-wrapper">
-							<table class="alt">
-								<thead>
-									<tr>
-										<th>Name</th>
-										<th>Description</th>
-										<th>Price</th>
-									</tr>
-								</thead>
-								<tbody>
-									<tr>
-										<td>Item One</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Two</td>
-										<td>Vis ac commodo adipiscing arcu aliquet.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Three</td>
-										<td> Morbi faucibus arcu accumsan lorem.</td>
-										<td>29.99</td>
-									</tr>
-									<tr>
-										<td>Item Four</td>
-										<td>Vitae integer tempus condimentum.</td>
-										<td>19.99</td>
-									</tr>
-									<tr>
-										<td>Item Five</td>
-										<td>Ante turpis integer aliquet porttitor.</td>
-										<td>29.99</td>
-									</tr>
-								</tbody>
-								<tfoot>
-									<tr>
-										<td colspan="2"></td>
-										<td>100.00</td>
-									</tr>
-								</tfoot>
-							</table>
-						</div>
-					</section>
-
-					<section>
-						<h4>Buttons</h4>
-						<ul class="actions">
-							<li><a href="#" class="button primary">Primary</a></li>
-							<li><a href="#" class="button">Default</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button large">Large</a></li>
-							<li><a href="#" class="button">Default</a></li>
-							<li><a href="#" class="button small">Small</a></li>
-						</ul>
-						<ul class="actions fit">
-							<li><a href="#" class="button fit">Fit</a></li>
-							<li><a href="#" class="button primary fit">Fit</a></li>
-							<li><a href="#" class="button fit">Fit</a></li>
-						</ul>
-						<ul class="actions fit small">
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-							<li><a href="#" class="button fit small">Fit + Small</a></li>
-							<li><a href="#" class="button primary fit small">Fit + Small</a></li>
-						</ul>
-						<ul class="actions">
-							<li><a href="#" class="button primary icon solid fa-download">Icon</a></li>
-							<li><a href="#" class="button icon solid fa-download">Icon</a></li>
-						</ul>
-						<ul class="actions">
-							<li><span class="button primary disabled">Disabled</span></li>
-							<li><span class="button disabled">Disabled</span></li>
-						</ul>
-					</section>
-
-					<section>
-						<h4>Form</h4>
-						<form method="post" action="#">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-6 col-12-xsmall">
-									<input type="text" name="demo-name" id="demo-name" value="" placeholder="Name" />
-								</div>
-								<div class="col-6 col-12-xsmall">
-									<input type="email" name="demo-email" id="demo-email" value="" placeholder="Email" />
-								</div>
-								<div class="col-12">
-									<select name="demo-category" id="demo-category">
-										<option value="">- Category -</option>
-										<option value="1">Manufacturing</option>
-										<option value="1">Shipping</option>
-										<option value="1">Administration</option>
-										<option value="1">Human Resources</option>
-									</select>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-low" name="demo-priority" checked>
-									<label for="demo-priority-low">Low</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-normal" name="demo-priority">
-									<label for="demo-priority-normal">Normal</label>
-								</div>
-								<div class="col-4 col-12-small">
-									<input type="radio" id="demo-priority-high" name="demo-priority">
-									<label for="demo-priority-high">High</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-copy" name="demo-copy">
-									<label for="demo-copy">Email me a copy</label>
-								</div>
-								<div class="col-6 col-12-small">
-									<input type="checkbox" id="demo-human" name="demo-human" checked>
-									<label for="demo-human">Not a robot</label>
-								</div>
-								<div class="col-12">
-									<textarea name="demo-message" id="demo-message" placeholder="Enter your message" rows="6"></textarea>
-								</div>
-								<div class="col-12">
-									<ul class="actions">
-										<li><input type="submit" value="Send Message" class="primary" /></li>
-										<li><input type="reset" value="Reset" /></li>
-									</ul>
-								</div>
-							</div>
-						</form>
-					</section>
-
-					<section>
-						<h4>Image</h4>
-						<h5>Fit</h5>
-						<div class="box alt">
-							<div class="row gtr-uniform gtr-50">
-								<div class="col-12"><span class="image fit"><img src="images/pic06.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic04.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic02.jpg" alt="" /></span></div>
-								<div class="col-4"><span class="image fit"><img src="images/pic03.jpg" alt="" /></span></div>
-							</div>
-						</div>
-						<h5>Left &amp; Right</h5>
-						<p><span class="image left"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-						<p><span class="image right"><img src="images/pic05.jpg" alt="" /></span>Fringilla nisl. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Donec accumsan interdum nisi, quis tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent tincidunt felis sagittis eget. tempus euismod. Vestibulum ante ipsum primis in faucibus vestibulum. Blandit adipiscing eu felis iaculis volutpat ac adipiscing accumsan eu faucibus. Integer ac pellentesque praesent.</p>
-					</section>
-
-				</div>
-			</section>
-		-->
-
-		<!-- Footer -->
-			<section id="footer">
-				<ul class="icons">
-					<li><a href="#" class="icon brands alt fa-twitter"><span class="label">Twitter</span></a></li>
-					<li><a href="#" class="icon brands alt fa-facebook-f"><span class="label">Facebook</span></a></li>
-					<li><a href="#" class="icon brands alt fa-instagram"><span class="label">Instagram</span></a></li>
-					<li><a href="#" class="icon brands alt fa-github"><span class="label">GitHub</span></a></li>
-					<li><a href="#" class="icon solid alt fa-envelope"><span class="label">Email</span></a></li>
-				</ul>
-				<ul class="copyright">
-					<li>&copy; Untitled</li><li>Design: <a href="http://html5up.net">HTML5 UP</a></li>
-				</ul>
-			</section>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
+					// 다른 URL을 추가할 수 있습니다.
+				];
+		
+				function openNextLink() {
+					if (startIndex <= stopIndex) {
+						const currentURL = urls[startIndex];
+						window.open(currentURL, '_blank');
+						startIndex++;
+					} else {
+						clearInterval(intervalId);
+						console.log('모든 링크를 열었습니다.');
+					}
+				}
+		
+				function startOpeningLinks(delay) {
+					startIndex = parseInt(document.getElementById('startLinkIndex').value, 10);
+					stopIndex = parseInt(document.getElementById('stopLinkIndex').value, 10);
+		
+					if (!isNaN(startIndex) && startIndex >= 0 && startIndex < urls.length &&
+						!isNaN(stopIndex) && stopIndex >= 0 && stopIndex < urls.length && startIndex <= stopIndex) {
+						intervalId = setInterval(openNextLink, delay);
+					} else {
+						console.log('올바른 시작 링크 인덱스와 멈추기 링크 인덱스를 입력하세요.');
+					}
+				}
+		
+				function stopOpeningLinks() {
+					clearInterval(intervalId);
+					console.log('링크 열기를 중지했습니다.');
+				}
+			</script>
+		</head>
+		<body>
+			<label for="startLinkIndex">시작 링크 인덱스:</label>
+			<input type="number" id="startLinkIndex" min="0" max="4" value="0">
+			<label for="stopLinkIndex">멈추기 링크 인덱스:</label>
+			<input type="number" id="stopLinkIndex" min="0" max="4" value="4">
+			<button onclick="startOpeningLinks(8200)">URLs 순차적으로 열기 (8.2초 딜레이)</button>
+			<button onclick="stopOpeningLinks()">열기 멈추기</button>
+	
 	</body>
 </html>
